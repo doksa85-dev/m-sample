@@ -1,0 +1,4 @@
+{
+  "functions": {"api/consultation.mjs": {"maxDuration": 30}},
+  "crons": [{"path": "/api/consultation?retry=1", "schedule": "*/15 * * * *"}]
+}

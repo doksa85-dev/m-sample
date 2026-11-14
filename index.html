@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Sculptural Kitchen | 주방 가구 디자인 콘셉트</title>
+<meta name="description" content="로쏘 레반토 천연대리석과 월넛으로 구상한 맞춤 주방 가구 디자인 콘셉트.">
+<link rel="stylesheet" href="style.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="#top">THE SCULPTURAL<br>KITCHEN</a><nav aria-label="주 메뉴"><a href="#about">ABOUT</a><a href="#material">MATERIAL</a><a href="#consultation">CONSULTATION</a></nav></header>
+<main id="top">
+<section class="hero" aria-labelledby="title"><img src="assets/kitchen.png" alt="월넛 키큰장 앞 로쏘 레반토 아일랜드 콘셉트 이미지" fetchpriority="high"><div class="hero-copy"><p class="eyebrow">DESIGN CONCEPT</p><h1 id="title">Sculpture<br><em>for Living.</em></h1><p>주방, 하나의 조형 작품이 되다.</p><a class="hero-link" href="#consultation">PRIVATE CONSULTATION <span aria-hidden="true">↗</span></a></div></section>
+<section id="about" class="split wrap"><div><p class="eyebrow">FORM</p><h2>Organic Pebble</h2><p>자연석 조약돌에서 가져온 비대칭 곡선. 4미터 길이의 아일랜드가 공간의 중심을 이룹니다.</p><p class="spec">4,000 × 1,400 × 900 mm <small>콘셉트 설계 치수</small></p></div><div class="visual form-view" role="img" aria-label="아일랜드 실루엣 콘셉트 이미지"></div></section>
+<section id="material" class="material"><div class="wrap split"><div class="visual stone" role="img" aria-label="버건디 대리석 콘셉트 이미지"></div><div><p class="eyebrow">MATERIAL</p><h2>Rosso Levanto</h2><p>짙은 버건디 바탕 위로 밝은 베인이 흐릅니다. 상판과 전면, 측면에 무광 혼드 마감의 로쏘 레반토 천연대리석을 적용하는 구상입니다.</p></div></div></section>
+<section class="wrap contrast"><p class="eyebrow">CONTRAST</p><h2>Walnut &amp; Stone</h2><p>천장까지 이어지는 월넛 건식무늬목 키큰장. 곧게 뻗은 수직선이 아일랜드의 유기적인 곡선을 드러냅니다.</p><div class="visual room" role="img" aria-label="월넛과 대리석이 어우러진 갤러리 공간"></div></section>
+<section class="wrap detail"><p class="eyebrow">DETAIL</p><h2>The Beauty of Precision</h2><div class="details"><div><h3>얇은 상판 엣지</h3><p>상판의 선명한 윤곽을 강조합니다.</p></div><div><h3>곡면 도어 분할</h3><p>곡면을 따라 도어의 분할선이 드러납니다.</p></div><div><h3>Floating Pebble</h3><p>안쪽으로 물린 플린스가 하부에 깊은 그림자를 만듭니다.</p></div></div></section>
+<section class="process"><div class="wrap"><p class="eyebrow">BESPOKE</p><h2>Designed Around You.</h2><p>공간과 생활 방식에 맞춰 진행하는 맞춤 제작의 제안 흐름입니다.</p><ol>
+  <li><h3>기획</h3><p>설치 공간과 생활 방식, 예산과 희망 일정을 상담해 프로젝트의 방향을 정합니다.</p></li>
+  <li><h3>설계</h3><p>현장 치수와 동선을 바탕으로 아일랜드의 형태, 수납 배치, 설비 위치를 구체화합니다.</p></li>
+  <li><h3>소재</h3><p>석재와 월넛 샘플을 비교해 색상과 질감, 마감 조합을 결정합니다.</p></li>
+  <li><h3>제작</h3><p>확정 도면을 기준으로 석재와 가구를 가공하고, 조립 상태와 마감을 점검합니다.</p></li>
+  <li><h3>설치</h3><p>현장에서 가구를 설치한 뒤 수평과 이음부, 도어 작동을 확인하고 관리 방법을 안내합니다.</p></li>
+</ol></div></section>
+<section id="consultation" class="wrap split consultation"><div><p class="eyebrow">PRIVATE CONSULTATION</p><h2>Begin Your<br>Conversation.</h2><p>설치 공간과 계획을 알려주세요.</p><p id="preview-note">미리보기에서는 예시 정보로 상담 흐름을 체험할 수 있습니다.</p></div><form id="consultation-form" action="/api/consultation" method="post"><div class="fields"><label>이름 <span aria-hidden="true">*</span><input name="name" autocomplete="name" required maxlength="80"></label><label>연락처 <span aria-hidden="true">*</span><input name="phone" type="tel" autocomplete="tel" required maxlength="30"></label><label>설치 지역 <span aria-hidden="true">*</span><input name="region" required maxlength="100"></label><label>예상 일정<input name="schedule" maxlength="100" placeholder="예: 내년 봄"></label></div><label>문의 내용 <span aria-hidden="true">*</span><textarea name="message" required maxlength="2000" rows="5"></textarea></label><label hidden>웹사이트<input name="website" tabindex="-1" autocomplete="off"></label><label class="consent"><input type="checkbox" name="consent" required><span>상담 신청 정보 수집·이용에 동의합니다.</span></label><details><summary>개인정보 안내</summary><p id="privacy-text">미리보기 입력 내용은 서버로 전송되거나 저장되지 않습니다.</p></details><button type="submit" disabled>상담 신청 <span aria-hidden="true">↗</span></button><p id="status" role="status" aria-live="polite"></p></form></section>
+</main>
+<footer>
+  <div class="wrap footer-content">
+    <div>
+      <a class="brand" href="#top">THE SCULPTURAL KITCHEN</a>
+      <address class="footer-business">
+        사업자명 union<br>
+        서울시 00로 00번길 1층<br>
+        <a href="tel:020000000">02-000-0000</a><br>
+        영업시간 AM 09시 ~ PM 06시
+      </address>
+    </div>
+    <div class="footer-links" aria-label="소셜 미디어 및 문의">
+      <a href="https://www.youtube.com/">유튜브 ↗</a>
+      <a href="https://www.instagram.com/">인스타그램 ↗</a>
+      <a href="#consultation">상담 문의 ↗</a>
+    </div>
+  </div>
+</footer>
+<a class="mobile-cta" href="#consultation">PRIVATE CONSULTATION <span aria-hidden="true">↗</span></a>
+</body></html>
+
