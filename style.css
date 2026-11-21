@@ -147,6 +147,3 @@ footer a:hover{text-decoration:underline}
   .label-before { left: 10px; }
   .label-after { right: 10px; }
 }
-.hero-comparison .comparison-frame { aspect-ratio: 3 / 2; }
-.comparison-slider-label { display:flex; justify-content:space-between; width:100%; font-size:.8rem; }
-.hero-comparison #comparison-slider { width:100%; margin:0; padding:0; height:30px; accent-color:var(--wine); cursor:pointer; border:0; }
