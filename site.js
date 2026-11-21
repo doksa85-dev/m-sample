@@ -162,3 +162,45 @@ for (const image of comparisonFrame.querySelectorAll("img")) {
   if (image.complete && image.naturalWidth === 0) showImageError();
 }
 setComparisonSplit(50);
+
+const typingText = document.querySelector("#typing-text");
+const typingPhrase = "[YOU DERAM KITCHEN]";
+const typingMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let typingIndex = 0;
+let typingErasing = false;
+let typingTimer;
+
+function renderTypingText() {
+  const visible = typingPhrase.slice(0, typingIndex);
+  // Reserve two lines and always begin KITCHEN on the second line.
+  typingText.textContent = visible.length > 10
+    ? visible.slice(0, 10) + "\n" + visible.slice(11)
+    : visible;
+}
+
+function advanceTyping() {
+  typingIndex += typingErasing ? -1 : 1;
+  renderTypingText();
+
+  let delay = 120;
+  if (typingIndex === typingPhrase.length) {
+    typingErasing = true;
+    delay = 2000;
+  } else if (typingIndex === 0) {
+    typingErasing = false;
+  }
+  typingTimer = window.setTimeout(advanceTyping, delay);
+}
+
+function resetTyping() {
+  window.clearTimeout(typingTimer);
+  typingIndex = typingMotion.matches ? typingPhrase.length : 0;
+  typingErasing = false;
+  renderTypingText();
+  if (!typingMotion.matches) {
+    typingTimer = window.setTimeout(advanceTyping, 120);
+  }
+}
+
+typingMotion.addEventListener("change", resetTyping);
+resetTyping();

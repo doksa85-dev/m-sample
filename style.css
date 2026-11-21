@@ -173,3 +173,23 @@ footer a:hover{text-decoration:underline}
   .project-comparison .label-before { left:10px; }
   .project-comparison .label-after { right:10px; }
 }
+
+.hero .typing-title {
+  height: 2.16em;
+  line-height: 1.08;
+  font-size: clamp(2.2rem, 7.5vw, 8rem);
+}
+.typing-visual { display: block; white-space: pre; }
+.typing-cursor {
+  display: inline-block;
+  font-family: var(--sans);
+  font-weight: 400;
+  animation: typing-blink 1s step-end infinite;
+}
+@keyframes typing-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .typing-cursor { animation: none; }
+}
