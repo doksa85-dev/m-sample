@@ -90,3 +90,76 @@ for (const image of comparisonFrame.querySelectorAll("img")) {
   if (image.complete && image.naturalWidth === 0) showImageError();
 }
 setComparisonSplit(50);
+
+const backgroundMusic = document.querySelector("#background-music");
+const musicControls = document.querySelector(".music-controls");
+const musicToggle = document.querySelector("#music-toggle");
+const musicVolume = document.querySelector("#music-volume");
+const musicVolumeValue = document.querySelector("#music-volume-value");
+const musicStatus = document.querySelector("#music-status");
+let musicWanted = true;
+let musicStarting = false;
+let musicNeedsGesture = false;
+
+// Set the initial volume before the first scripted playback attempt.
+backgroundMusic.volume = Number(musicVolume.value) / 100;
+
+function updateMusicControls() {
+  const playing = !backgroundMusic.paused;
+  musicToggle.textContent = playing ? "음악 끄기" : "음악 켜기";
+  musicToggle.setAttribute("aria-pressed", String(playing));
+}
+
+async function startMusic() {
+  if (!musicWanted || musicStarting) return;
+  musicStarting = true;
+  try {
+    await backgroundMusic.play();
+    musicNeedsGesture = false;
+    if (!musicWanted) backgroundMusic.pause();
+    musicStatus.textContent = musicWanted ? "배경 음악이 재생 중입니다." : "배경 음악이 꺼졌습니다.";
+  } catch (error) {
+    musicNeedsGesture = error.name === "NotAllowedError";
+    musicStatus.textContent = musicNeedsGesture
+      ? "화면을 클릭하거나 음악 켜기 버튼을 누르면 음악이 재생됩니다."
+      : "음악을 재생하지 못했습니다. 음악 켜기를 눌러 다시 시도해 주세요.";
+  } finally {
+    musicStarting = false;
+    updateMusicControls();
+  }
+}
+
+musicToggle.addEventListener("click", () => {
+  musicWanted = backgroundMusic.paused && !musicStarting;
+  if (musicWanted) {
+    startMusic();
+  } else {
+    musicNeedsGesture = false;
+    backgroundMusic.pause();
+    musicStatus.textContent = "배경 음악이 꺼졌습니다.";
+    updateMusicControls();
+  }
+});
+
+musicVolume.addEventListener("input", () => {
+  backgroundMusic.volume = Number(musicVolume.value) / 100;
+  musicVolumeValue.textContent = musicVolume.value + "%";
+});
+
+backgroundMusic.addEventListener("play", updateMusicControls);
+backgroundMusic.addEventListener("pause", updateMusicControls);
+backgroundMusic.addEventListener("error", () => {
+  musicNeedsGesture = false;
+  musicStatus.textContent = "음악 파일을 불러오지 못했습니다.";
+  updateMusicControls();
+});
+
+function resumeMusicAfterGesture(event) {
+  if (!musicWanted || !musicNeedsGesture || musicControls.contains(event.target)) return;
+  if (event.type === "keydown" && (event.repeat || event.ctrlKey || event.altKey || event.metaKey)) return;
+  startMusic();
+}
+
+document.addEventListener("click", resumeMusicAfterGesture);
+document.addEventListener("keydown", resumeMusicAfterGesture);
+startMusic();

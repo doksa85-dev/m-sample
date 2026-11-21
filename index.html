@@ -78,5 +78,13 @@
   </div>
 </footer>
 <a class="mobile-cta" href="#consultation">PRIVATE CONSULTATION <span aria-hidden="true">↗</span></a>
+<audio id="background-music" src="assets/Sunlight_on_White_Marble.mp3" loop preload="none"></audio>
+<div class="music-controls" role="group" aria-label="배경 음악">
+  <button type="button" id="music-toggle" aria-controls="background-music" aria-pressed="false">음악 켜기</button>
+  <label for="music-volume">볼륨</label>
+  <input id="music-volume" type="range" min="0" max="100" step="1" value="30" aria-label="배경 음악 볼륨">
+  <output id="music-volume-value" for="music-volume">30%</output>
+  <span id="music-status" class="sr-only" role="status" aria-live="polite"></span>
+</div>
 </body></html>
 

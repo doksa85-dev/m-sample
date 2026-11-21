@@ -147,3 +147,49 @@ footer a:hover{text-decoration:underline}
   .label-before { left: 10px; }
   .label-after { right: 10px; }
 }
+
+.music-controls {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 32px);
+  padding: 10px 14px;
+  border: 1px solid #cbbeb3;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  box-shadow: 0 4px 20px #342c291a;
+  font-size: .75rem;
+}
+.music-controls button {
+  display: block;
+  width: auto;
+  min-height: 44px;
+  padding: 10px 12px;
+  white-space: nowrap;
+  font-size: .75rem;
+}
+.music-controls label { font-size: .75rem; }
+.music-controls #music-volume {
+  display: block;
+  width: 80px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  accent-color: var(--wine);
+  cursor: pointer;
+}
+.music-controls output { min-width: 4ch; font-variant-numeric: tabular-nums; }
+@media (max-width: 720px) {
+  .music-controls {
+    right: 16px;
+    bottom: calc(82px + env(safe-area-inset-bottom, 0px));
+    gap: 8px;
+    padding: 6px 10px;
+  }
+}
