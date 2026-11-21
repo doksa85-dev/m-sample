@@ -20,7 +20,7 @@
 <script src="site.js" defer></script>
 </head>
 <body>
-<header><a class="brand" href="#top">THE SCULPTURAL<br>KITCHEN</a><nav aria-label="주 메뉴"><a href="#about">ABOUT</a><a href="#material">MATERIAL</a><a href="#consultation">CONSULTATION</a></nav></header>
+<header><a class="brand" href="#top">THE SCULPTURAL<br>KITCHEN</a><nav aria-label="주 메뉴"><a href="#about">ABOUT</a><a href="#material">MATERIAL</a><a href="https://forms.gle/RCWKKwBgRsoSciweA">CONSULTATION</a></nav></header>
 <main id="top">
 <section class="hero" aria-labelledby="title">
   <img src="assets/kitchen.png" alt="월넛 키큰장 앞 로쏘 레반토 아일랜드 콘셉트 이미지" fetchpriority="high">
@@ -31,7 +31,7 @@
       <span class="typing-visual" aria-hidden="true"><span id="typing-text">[YOU DERAM KITCHEN]</span><span class="typing-cursor">|</span></span>
     </h1>
     <p>주방, 하나의 조형 작품이 되다.</p>
-    <a class="hero-link" href="#consultation">PRIVATE CONSULTATION <span aria-hidden="true">↗</span></a>
+    <a class="hero-link" href="https://forms.gle/RCWKKwBgRsoSciweA">PRIVATE CONSULTATION <span aria-hidden="true">↗</span></a>
   </div>
 </section>
 <section id="about" class="split wrap"><div><p class="eyebrow">FORM</p><h2>Organic Pebble</h2><p>자연석 조약돌에서 가져온 비대칭 곡선. 4미터 길이의 아일랜드가 공간의 중심을 이룹니다.</p><p class="spec">4,000 × 1,400 × 900 mm <small>콘셉트 설계 치수</small></p></div><div class="visual form-view" role="img" aria-label="아일랜드 실루엣 콘셉트 이미지"></div></section>
@@ -68,7 +68,17 @@
   </div>
   <p class="comparison-error" role="status" hidden>비교 이미지를 불러오지 못했습니다. 페이지를 새로고침해 주세요.</p>
 </section>
-<section id="consultation" class="wrap split consultation"><div><p class="eyebrow">PRIVATE CONSULTATION</p><h2>Begin Your<br>Conversation.</h2><p>설치 공간과 계획을 알려주세요.</p><p id="preview-note">미리보기에서는 예시 정보로 상담 흐름을 체험할 수 있습니다.</p></div><form id="consultation-form" action="/api/consultation" method="post"><div class="fields"><label>이름 <span aria-hidden="true">*</span><input name="name" autocomplete="name" required maxlength="80"></label><label>연락처 <span aria-hidden="true">*</span><input name="phone" type="tel" autocomplete="tel" required maxlength="30"></label><label>설치 지역 <span aria-hidden="true">*</span><input name="region" required maxlength="100"></label><label>예상 일정<input name="schedule" maxlength="100" placeholder="예: 내년 봄"></label></div><label>문의 내용 <span aria-hidden="true">*</span><textarea name="message" required maxlength="2000" rows="5"></textarea></label><label hidden>웹사이트<input name="website" tabindex="-1" autocomplete="off"></label><label class="consent"><input type="checkbox" name="consent" required><span>상담 신청 정보 수집·이용에 동의합니다.</span></label><details><summary>개인정보 안내</summary><p id="privacy-text">미리보기 입력 내용은 서버로 전송되거나 저장되지 않습니다.</p></details><button type="submit" disabled>상담 신청 <span aria-hidden="true">↗</span></button><p id="status" role="status" aria-live="polite"></p></form></section>
+<section id="consultation" class="wrap split consultation">
+  <div>
+    <p class="eyebrow">PRIVATE CONSULTATION</p>
+    <h2>Begin Your<br>Conversation.</h2>
+    <p>설치 공간과 계획을 알려주세요.</p>
+  </div>
+  <div class="consultation-invitation">
+    <p>Google Forms에서 상담 신청서를 작성해 주세요.</p>
+    <a class="consultation-link" href="https://forms.gle/RCWKKwBgRsoSciweA">상담 신청 <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
 </main>
 <footer>
   <div class="wrap footer-content">
@@ -84,11 +94,11 @@
     <div class="footer-links" aria-label="소셜 미디어 및 문의">
       <a href="https://www.youtube.com/">유튜브 ↗</a>
       <a href="https://www.instagram.com/">인스타그램 ↗</a>
-      <a href="#consultation">상담 문의 ↗</a>
+      <a href="https://forms.gle/RCWKKwBgRsoSciweA">상담 문의 ↗</a>
     </div>
   </div>
 </footer>
-<a class="mobile-cta" href="#consultation">PRIVATE CONSULTATION <span aria-hidden="true">↗</span></a>
+<a class="mobile-cta" href="https://forms.gle/RCWKKwBgRsoSciweA">PRIVATE CONSULTATION <span aria-hidden="true">↗</span></a>
 <audio id="background-music" src="assets/Sunlight_on_White_Marble.mp3" loop preload="none"></audio>
 <div class="music-controls" role="group" aria-label="배경 음악">
   <button type="button" id="music-toggle" aria-controls="background-music" aria-pressed="false">음악 켜기</button>
