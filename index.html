@@ -24,24 +24,26 @@
 <main id="top">
 <section class="hero hero-comparison" aria-labelledby="title">
   <div class="comparison-heading">
-    <div><p class="eyebrow">DESIGN &amp; REALIZATION</p><h1 id="title">From Sketch<br><em>to Space.</em></h1></div>
-    <div><p>디자인 시안과 완성 이미지를 비교해 보세요.</p><a class="hero-link" href="#consultation">PRIVATE CONSULTATION <span aria-hidden="true">↗</span></a></div>
+    <div><p class="eyebrow">BEFORE &amp; AFTER</p><h1 id="title">From Sketch<br><em>to Space.</em></h1></div>
+    <div><p>일러스트과 실제 사진를 비교해 보세요.</p><a class="hero-link" href="#consultation">PRIVATE CONSULTATION <span aria-hidden="true">↗</span></a></div>
   </div>
   <div class="comparison-frame" id="hero-comparison" style="--split:50%">
-    <img class="comparison-image" src="assets/comparison-after.jpg" alt="밝은 석재 아일랜드와 벽면 수납장이 어우러진 주방 완성 이미지" width="1200" height="857" fetchpriority="high" draggable="false">
-    <div class="comparison-before"><img class="comparison-image" src="assets/comparison-before.png" alt="아일랜드와 벽면 수납장의 형태를 그린 주방 디자인 시안" width="1484" height="1060" fetchpriority="high" draggable="false"></div>
-    <span class="comparison-label label-before">디자인 시안</span>
-    <span class="comparison-label label-after">완성 이미지</span>
+    <img class="comparison-image" src="assets/gemini-after.jpg" alt="주황색 브롱코 차량의 실제 사진" width="640" height="426" fetchpriority="high" draggable="false">
+    <div class="comparison-before"><img class="comparison-image" src="assets/gemini-before.png" alt="주황색 브롱코 차량의 수채화 일러스트" width="1536" height="1024" fetchpriority="high" draggable="false"></div>
+    <span class="comparison-label label-before">일러스트</span>
+    <span class="comparison-label label-after">실제 사진</span>
     <span class="comparison-divider" aria-hidden="true"><span>↔</span></span>
-    <label class="sr-only" for="comparison-range">디자인 시안 표시 비율</label>
-    <input id="comparison-range" type="range" min="0" max="100" value="50" step="1" aria-describedby="comparison-instructions" aria-valuetext="디자인 시안 50%, 완성 이미지 50%">
+    <label class="sr-only" for="comparison-range">일러스트 표시 비율</label>
+    <input id="comparison-range" type="range" min="0" max="100" value="50" step="1" aria-describedby="comparison-instructions" aria-valuetext="일러스트 50%, 실제 사진 50%">
   </div>
   <div class="comparison-controls">
     <p id="comparison-instructions">손잡이를 좌우로 움직여 비교하세요. 키보드 방향키로도 조절할 수 있습니다.</p>
+    <label class="comparison-slider-label" for="comparison-slider">비교 비율 <output id="comparison-readout">50%</output></label>
+    <input id="comparison-slider" type="range" min="0" max="100" value="50" step="1" aria-label="일러스트 표시 비율">
     <div class="comparison-presets" role="group" aria-label="비교 화면 선택">
-      <button type="button" data-comparison-split="100" aria-pressed="false">시안만 보기</button>
+      <button type="button" data-comparison-split="100" aria-pressed="false">일러스트만 보기</button>
       <button type="button" data-comparison-split="50" aria-pressed="true">50 : 50</button>
-      <button type="button" data-comparison-split="0" aria-pressed="false">완성 이미지 보기</button>
+      <button type="button" data-comparison-split="0" aria-pressed="false">실제 사진 보기</button>
     </div>
   </div>
   <p class="comparison-error" role="status" hidden>비교 이미지를 불러오지 못했습니다. 페이지를 새로고침해 주세요.</p>

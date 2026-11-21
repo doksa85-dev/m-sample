@@ -64,6 +64,8 @@ initialize();
 
 const comparisonFrame = document.querySelector("#hero-comparison");
 const comparisonRange = document.querySelector("#comparison-range");
+const comparisonSlider = document.querySelector("#comparison-slider");
+const comparisonReadout = document.querySelector("#comparison-readout");
 const comparisonPresets = document.querySelectorAll("[data-comparison-split]");
 const beforeLabel = comparisonFrame.querySelector(".label-before");
 const afterLabel = comparisonFrame.querySelector(".label-after");
@@ -71,8 +73,10 @@ const afterLabel = comparisonFrame.querySelector(".label-after");
 function setComparisonSplit(value) {
   const split = Math.max(0, Math.min(100, Math.round(Number(value))));
   comparisonRange.value = String(split);
+  comparisonSlider.value = String(split);
+  comparisonReadout.textContent = split + "%";
   comparisonFrame.style.setProperty("--split", split + "%");
-  comparisonRange.setAttribute("aria-valuetext", "디자인 시안 " + split + "%, 완성 이미지 " + (100 - split) + "%");
+  comparisonRange.setAttribute("aria-valuetext", "일러스트 " + split + "%, 실제 사진 " + (100 - split) + "%");
   beforeLabel.hidden = split < 15;
   afterLabel.hidden = split > 85;
   for (const preset of comparisonPresets) {
@@ -80,6 +84,7 @@ function setComparisonSplit(value) {
   }
 }
 
+comparisonSlider.addEventListener("input", () => setComparisonSplit(comparisonSlider.value));
 comparisonRange.addEventListener("input", () => setComparisonSplit(comparisonRange.value));
 for (const preset of comparisonPresets) {
   preset.addEventListener("click", () => setComparisonSplit(preset.dataset.comparisonSplit));
