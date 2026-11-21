@@ -171,11 +171,7 @@ let typingErasing = false;
 let typingTimer;
 
 function renderTypingText() {
-  const visible = typingPhrase.slice(0, typingIndex);
-  // Reserve two lines and always begin KITCHEN on the second line.
-  typingText.textContent = visible.length > 10
-    ? visible.slice(0, 10) + "\n" + visible.slice(11)
-    : visible;
+  typingText.textContent = typingPhrase.slice(0, typingIndex);
 }
 
 function advanceTyping() {
