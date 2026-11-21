@@ -61,3 +61,32 @@ form.addEventListener("submit", async (event) => {
 });
 
 initialize();
+
+const comparisonFrame = document.querySelector("#hero-comparison");
+const comparisonRange = document.querySelector("#comparison-range");
+const comparisonPresets = document.querySelectorAll("[data-comparison-split]");
+const beforeLabel = comparisonFrame.querySelector(".label-before");
+const afterLabel = comparisonFrame.querySelector(".label-after");
+
+function setComparisonSplit(value) {
+  const split = Math.max(0, Math.min(100, Math.round(Number(value))));
+  comparisonRange.value = String(split);
+  comparisonFrame.style.setProperty("--split", split + "%");
+  comparisonRange.setAttribute("aria-valuetext", "디자인 시안 " + split + "%, 완성 이미지 " + (100 - split) + "%");
+  beforeLabel.hidden = split < 15;
+  afterLabel.hidden = split > 85;
+  for (const preset of comparisonPresets) {
+    preset.setAttribute("aria-pressed", String(Number(preset.dataset.comparisonSplit) === split));
+  }
+}
+
+comparisonRange.addEventListener("input", () => setComparisonSplit(comparisonRange.value));
+for (const preset of comparisonPresets) {
+  preset.addEventListener("click", () => setComparisonSplit(preset.dataset.comparisonSplit));
+}
+for (const image of comparisonFrame.querySelectorAll("img")) {
+  const showImageError = () => { document.querySelector(".comparison-error").hidden = false; };
+  image.addEventListener("error", showImageError, { once: true });
+  if (image.complete && image.naturalWidth === 0) showImageError();
+}
+setComparisonSplit(50);
